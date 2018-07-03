@@ -1,0 +1,30 @@
+/*
+In many cases you may want to use the NativeScript core theme instead
+of writing your own CSS rules. For a full list of class names in the theme
+refer to http://docs.nativescript.org/ui/theme.
+*/
+/* @import 'nativescript-theme-core/css/core.light.css'; */
+/* @import 'nativescript-theme-core/css/core.dark.css'; */
+@import 'nativescript-theme-core/css/forest.css';
+
+SegmentedBar {
+    font-size: 24px;
+}
+
+.body {
+    background-color: #fcceaa;
+    color: #373d3e;
+}
+.body Label {
+    color: #002f36;
+}
+Label.h1 {
+    color: #00464f;
+}
+
+Label.action-bar {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px 0px 20px 00px;
+    margin: 0;
+}
