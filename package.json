@@ -14,7 +14,8 @@
     }
   },
   "scripts": {
-    "lint": "eslint \"app/**/*.js\""
+    "lint": "eslint \"app/**/*.js\"",
+    "build": "tns build android"
   },
   "dependencies": {
     "kinvey-nativescript-sdk": "3.11.1",
