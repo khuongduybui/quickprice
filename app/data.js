@@ -120,7 +120,7 @@ function init() {
         const shipping = Math.ceil(weight * 5);
 
         const usd = price * tax + custom + shipping;
-        const vnd = (Math.ceil((usd * 2.3 / 5)) * 50000);
+        const vnd = (Math.ceil((usd * 2.33 / 5)) * 50000);
         const final = friendlyVND(vnd);
         if (data.final != final) {
             data.final = final;
