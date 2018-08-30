@@ -12,6 +12,7 @@
 				<SegmentedBar.items>
 					<SegmentedBarItem title="Nước hoa" />
 					<SegmentedBarItem title="Mỹ phẩm" />
+					<SegmentedBarItem title="Son" />
 				</SegmentedBar.items>
 			</SegmentedBar>
 
