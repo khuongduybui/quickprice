@@ -35,6 +35,15 @@ function pageLoaded(args) {
   page.bindingContext = homeViewModel;
 }
 
+function layoutSwiped(args) {
+  if (args.direction == 2) { // left
+    homeViewModel.data.category = (homeViewModel.data.category || homeViewModel.data.categories.length) - 1;
+  }
+  if (args.direction == 1) { // right
+    homeViewModel.data.category = (homeViewModel.data.category + 1) % homeViewModel.data.categories.length;
+  }
+}
+
 /*
 Exporting a function in a NativeScript code-behind file makes it accessible
 to the file’s corresponding XML file. In this case, exporting the onNavigatingTo
@@ -42,3 +51,4 @@ function here makes the navigatingTo="onNavigatingTo" binding in this page’s X
 file work.
 */
 exports.pageLoaded = pageLoaded;
+exports.layoutSwiped = layoutSwiped;

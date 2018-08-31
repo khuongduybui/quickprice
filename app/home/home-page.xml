@@ -7,7 +7,7 @@
 		</ActionBar>
 	</Page.actionBar>
 	<ScrollView class="body">
-		<StackLayout class="form">
+		<StackLayout class="form" swipe="layoutSwiped">
 			<SegmentedBar selectedIndex="{{ data.category }}">
 				<SegmentedBar.items>
 					<SegmentedBarItem title="Nước hoa" />
