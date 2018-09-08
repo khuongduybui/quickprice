@@ -1,17 +1,17 @@
 <Page loaded="pageLoaded" class="page" xmlns="http://www.nativescript.org/tns.xsd">
-	<ActionBar title="{{ data.printTitle }}" class="action-bar">
-		<ActionBar.items>
-			<ActionItem tap="{{ home }}" android.systemIcon="ic_menu_close_clear_cancel" />
-		</ActionBar.items>
-	</ActionBar>
+  <ActionBar title="{{ data.printTitle }}" class="action-bar">
+    <ActionBar.items>
+      <ActionItem tap="{{ home }}" android.systemIcon="ic_menu_close_clear_cancel" />
+    </ActionBar.items>
+  </ActionBar>
 
-	<DockLayout stretchLastChild="true">
-		<Label class="text-center action-bar" dock="bottom" text="{{ data.printValue }}" />
+  <DockLayout stretchLastChild="true">
+    <Label class="text-center action-bar" dock="bottom" text="{{ data.printValue }}" />
 
-		<ScrollView>
-			<StackLayout class="home-panel" verticalAlignment="center">
-				<Image src="{{ data.photo._android }}" />
-			</StackLayout>
-		</ScrollView>
-	</DockLayout>
+    <ScrollView>
+      <StackLayout class="home-panel" verticalAlignment="center">
+        <Image src="{{ data.photo._android }}" />
+      </StackLayout>
+    </ScrollView>
+  </DockLayout>
 </Page>

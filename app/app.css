@@ -8,23 +8,23 @@ refer to http://docs.nativescript.org/ui/theme.
 @import 'nativescript-theme-core/css/forest.css';
 
 SegmentedBar {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .body {
-    background-color: #fcceaa;
-    color: #373d3e;
+  background-color: #fcceaa;
+  color: #373d3e;
 }
 .body Label {
-    color: #002f36;
+  color: #002f36;
 }
 Label.h1 {
-    color: #00464f;
+  color: #00464f;
 }
 
 Label.action-bar {
-    font-size: 24px;
-    font-weight: bold;
-    padding: 15px 0px 20px 00px;
-    margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 15px 0px 20px 00px;
+  margin: 0;
 }

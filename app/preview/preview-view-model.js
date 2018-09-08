@@ -2,16 +2,16 @@ const data = require("../data");
 const frameModule = require("tns-core-modules/ui/frame");
 
 function PreviewViewModel() {
-	const viewModel = {};
+  const viewModel = {};
 
-	viewModel.data = data;
+  viewModel.data = data;
 
-	viewModel.home = () => {
-		const topmostFrame = frameModule.topmost();
-		return topmostFrame.navigate("home/home-page");
-	}
+  viewModel.home = () => {
+    const topmostFrame = frameModule.topmost();
+    return topmostFrame.navigate("home/home-page");
+  }
 
-	return viewModel;
+  return viewModel;
 }
 
 module.exports = PreviewViewModel;

@@ -1,1 +1,5 @@
-{"appId":"info.phoenixpalace.quickprice","minSdkVersion":null,"targetSdkVersion":null}
+{
+  "appId": "info.phoenixpalace.quickprice",
+  "minSdkVersion": null,
+  "targetSdkVersion": null
+}

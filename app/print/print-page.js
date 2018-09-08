@@ -3,9 +3,9 @@ var PrintViewModel = require("./print-view-model");
 var printViewModel = new PrintViewModel();
 
 function pageLoaded(args) {
-	var page = args.object;
+  var page = args.object;
 
-	page.bindingContext = printViewModel;
+  page.bindingContext = printViewModel;
 }
 
 exports.pageLoaded = pageLoaded;
