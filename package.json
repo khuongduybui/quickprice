@@ -4,6 +4,7 @@
   "author": "duy@buifamily.info",
   "repository": "https://github.com/khuongduybui/quickprice.git",
   "version": "1.0.0",
+  "private": true,
   "nativescript": {
     "id": "info.phoenixpalace.quickprice",
     "tns-ios": {
