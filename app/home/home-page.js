@@ -9,7 +9,7 @@ NativeScript adheres to the CommonJS specification for dealing with
 JavaScript modules. The CommonJS require() function is how you import
 JavaScript modules defined in other files.
 */
-var frameModule = require("ui/frame");
+// var frameModule = require("ui/frame");
 var HomeViewModel = require("./home-view-model");
 
 var homeViewModel = new HomeViewModel();

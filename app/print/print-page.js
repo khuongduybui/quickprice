@@ -1,4 +1,4 @@
-var frameModule = require("ui/frame");
+// var frameModule = require("ui/frame");
 var PrintViewModel = require("./print-view-model");
 var printViewModel = new PrintViewModel();
 

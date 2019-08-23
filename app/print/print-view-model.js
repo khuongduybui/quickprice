@@ -23,7 +23,7 @@ function PrintViewModel() {
           data.photo = selected;
         });
         return topmostFrame.navigate("preview/preview-page");
-      }).catch(function (e) {
+      }).catch(function (_error) {
         // process error
       });
   }

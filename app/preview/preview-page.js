@@ -1,4 +1,4 @@
-var frameModule = require("ui/frame");
+// var frameModule = require("ui/frame");
 var PreviewViewModel = require("./preview-view-model");
 var previewViewModel = new PreviewViewModel();
 
