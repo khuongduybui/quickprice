@@ -1,4 +1,5 @@
-const observableModule = require("data/observable");
+const observableModule = require('tns-core-modules/data/observable');
+const usdToVnd = 23500;
 
 function init() {
   const data = observableModule.fromObject({
@@ -20,9 +21,9 @@ function init() {
 
     taxes: ['0%', '5%', '6%', '7.5%', '10%'],
     taxValues: [1, 1.05, 1.06, 1.075, 1.1],
-    tax: 0,
-    taxValue: 1,
-    taxLabel: '0%',
+    tax: 2,
+    taxValue: 1.06,
+    taxLabel: '6%',
 
     volumes: ['30ml', '50ml', '75ml', '90ml', '100ml', '125ml', '150ml', '200ml', '500ml'],
     volumeValues: [30, 50, 75, 90, 100, 125, 150, 200, 500],
@@ -127,7 +128,7 @@ function init() {
     const shipping = Math.ceil(weight * 5);
 
     const usd = price * tax + custom + shipping;
-    const vnd = (Math.ceil((usd * 2.33 / 5)) * 50000);
+    const vnd = Math.ceil(usd * usdToVnd / 50000) * 50000;
     const final = friendlyVND(vnd);
     if (data.final != final) {
       data.final = final;
@@ -146,7 +147,6 @@ function init() {
     if (data.printValue != printValue) {
       data.printValue = printValue;
     }
-
   });
   return data;
 }
