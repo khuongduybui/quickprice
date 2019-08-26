@@ -9,7 +9,7 @@ function HomeViewModel() {
   viewModel.print = () => {
     const topmostFrame = frameModule.topmost();
     return topmostFrame.navigate("print/print-page");
-  }
+  };
 
   return viewModel;
 }

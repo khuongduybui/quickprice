@@ -1,7 +1,6 @@
-<Page loaded="pageLoaded" class="page" xmlns="http://www.nativescript.org/tns.xsd">
-  <Page.actionBar>
-    <ActionBar title="Xuất hình" class="action-bar"></ActionBar>
-  </Page.actionBar>
+<Page class="page" navigatingTo="onNavigatingTo"
+  xmlns="http://schemas.nativescript.org/tns.xsd">
+  <ActionBar class="action-bar" title="Xuất hình"></ActionBar>
 
   <ScrollView class="body">
     <StackLayout class="form">
