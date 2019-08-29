@@ -13,6 +13,7 @@
                     <SegmentedBarItem title="Nước hoa" />
                     <SegmentedBarItem title="Mỹ phẩm" />
                     <SegmentedBarItem title="Son" />
+                    <SegmentedBarItem title="Khác" />
                 </SegmentedBar.items>
             </SegmentedBar>
 
@@ -40,6 +41,14 @@
                 <Label class="h2" row="0" col="0" text="Cỡ" textWrap="true" />
                 <Slider row="0" col="1" value="{{ data.size }}" minValue="0" maxValue="{{ data.sizes.length - 1 }}" />
                 <Label class="h2" row="0" col="2" text="{{ data.sizeLabel }}" textWrap="true" />
+            </GridLayout>
+
+            <GridLayout class="input-field input-sides" rows="auto auto" columns="60 * 75" visibility="{{ data.weightVisibility }}">
+                <Label class="h2" row="0" col="0" text="Cỡ" textWrap="true" />
+                <StackLayout class="input input-border" margin="0 10" padding="0 5" row="0" col="1">
+                    <TextField class="input" text="{{ data.weight }}" keyboardType="number" margin="2 0" fontSize="20" />
+                </StackLayout>
+                <Label class="h2" row="0" col="2" text="oz" textWrap="true" />
             </GridLayout>
 
             <Label class="h1 text-center" text="{{ data.final }}" />

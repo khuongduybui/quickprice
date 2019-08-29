@@ -1,12 +1,14 @@
 const observableModule = require('tns-core-modules/data/observable');
+
 const usdToVnd = 23500;
+const shippingCost = 5; // $/lb
 
 function init() {
   const data = observableModule.fromObject({
     name: '',
 
-    categories: ['Nước hoa', 'Mỹ phẩm', 'Son'],
-    categoryValues: ['perfume', 'cosmetics', 'lipsticks'],
+    categories: ['Nước hoa', 'Mỹ phẩm', 'Son', 'Khác'],
+    categoryValues: ['perfume', 'cosmetics', 'lipsticks', 'others'],
     category: 0,
     categoryValue: 'perfume',
     categoryLabel: 'Nước hoa',
@@ -39,6 +41,9 @@ function init() {
     sizeLabel: 'M',
     sizeVisibility: 'collapsed',
 
+    weight: 4,
+    weightVisibility: 'collapsed',
+
     final: '250,000 VND',
     printTitle: '',
     printValue: '450,000 VND'
@@ -54,6 +59,7 @@ function init() {
     if (event.propertyName == 'sizeLabel') return;
     if (event.propertyName == 'sizeValue') return;
     if (event.propertyName == 'sizeVisibility') return;
+    if (event.propertyName == 'weightVisibility') return;
     if (event.propertyName == 'categoryLabel') return;
     if (event.propertyName == 'categoryValue') return;
     if (event.propertyName == 'profitLabel') return;
@@ -100,32 +106,38 @@ function init() {
     if (data.categoryValue != category) {
       data.categoryValue = category;
     }
-    let weight = 0;
+
+    let weight = parseInt(data.weight, 10); // unit: ounce
+    weight = isNaN(weight) ? 0 : (weight / 16); // unit: pound
+
     let custom = 0;
+    data.printTitle = data.name;
+    data.volumeVisibility = 'collapsed';
+    data.sizeVisibility = 'collapsed';
+    data.weightVisibility = 'collapsed';
+
     switch (category) {
       case 'perfume':
         weight = volume / 100;
         custom = 5;
         data.volumeVisibility = '';
-        data.sizeVisibility = 'collapsed';
         data.printTitle = `${data.name} (${data.volumeLabel})`;
         break;
       case 'lipsticks':
         weight = 0.25;
         custom = price * tax >= 30 ? 1.5 : 0.5;
-        data.volumeVisibility = 'collapsed';
-        data.sizeVisibility = 'collapsed';
-        data.printTitle = data.name;
+        data.weightVisibility = '';
         break;
-      default:
+      case 'cosmetics':
         weight = size;
         custom = 2.5 * weight;
-        data.volumeVisibility = 'collapsed';
         data.sizeVisibility = '';
-        data.printTitle = data.name;
+        break;
+      default:
+        data.weightVisibility = '';
     }
 
-    const shipping = Math.ceil(weight * 5);
+    const shipping = Math.ceil(weight * shippingCost);
 
     const usd = price * tax + custom + shipping;
     const vnd = Math.ceil(usd * usdToVnd / 50000) * 50000;
