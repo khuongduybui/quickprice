@@ -42,8 +42,12 @@ gridLayout slider {
 }
 
 button {
-  padding: 10 0;
+  padding: 12 0;
   font-size: 20;
+}
+
+button.-outline {
+  padding: 5 0;
 }
 
 scrollView gridLayout label {
