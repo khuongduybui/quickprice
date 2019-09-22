@@ -16,3 +16,36 @@ The imported CSS rules must precede all other types of rules.
 The following CSS rule changes the font size of all UI
 components that have the btn class name.
 */
+page,
+segmentedBar {
+  font-size: 20;
+}
+
+gridLayout label {
+  padding: 5;
+  margin-top: 14;
+  margin-bottom: 11;
+}
+
+gridLayout label.textField {
+  margin-left: 25;
+}
+
+gridLayout textField {
+  font-size: 20;
+  margin-left: 30;
+  margin-right: 30;
+}
+
+gridLayout slider {
+  margin-top: 24;
+}
+
+button {
+  padding: 10 0;
+  font-size: 20;
+}
+
+scrollView gridLayout label {
+  font-size: 16;
+}

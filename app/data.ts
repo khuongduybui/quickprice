@@ -1,4 +1,5 @@
 import { readable, writable, derived } from 'svelte/store';
+import * as appSettings from 'tns-core-modules/application-settings';
 
 const usdToVnd = 23500;
 const shippingCost = 5; // $/lb
@@ -38,7 +39,7 @@ export const sizeIndex = writable(2);
 export const size = derived(sizeIndex, from(sizes));
 export const sizeLabel = derived(sizeIndex, from(sizeLabels));
 
-export const weight = writable(4); // oz
+export const weight = writable(16); // oz
 
 const shippingWeight = derived([category, volume, size, weight], ([category, volume, size, weight]) => {
   switch (category) {
@@ -70,6 +71,21 @@ const custom = derived([category, priceWithTax, shippingWeight], ([category, pri
 export const finalUsd = derived([priceWithTax, shipping, custom], ([priceWithTax, shipping, custom]) => priceWithTax + shipping + custom);
 export const finalVnd = derived(finalUsd, (finalUsd) => Math.ceil(finalUsd * usdToVnd / 50000) * 50000);
 export const final = derived(finalVnd, friendlyVND);
+
+export const fullHistory = writable([], (set) => {
+  if (appSettings.hasKey('fullHistory')) {
+    const storedBlob = appSettings.getString('fullHistory');
+    try {
+      const result = JSON.parse(storedBlob);
+      set(result);
+    } catch(_) {}
+  }
+  const unsubsribe = fullHistory.subscribe((history) => {
+    const blobToStore = JSON.stringify(history);
+    appSettings.setString('fullHistory', blobToStore);
+  });
+  return () => { unsubsribe(); }
+});
 
 function friendlyVND(value: number) {
   const text = value + '';
