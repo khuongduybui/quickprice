@@ -31,7 +31,7 @@
       <segmentedBarItem title="Son" />
       <segmentedBarItem title="Khác" />
     </segmentedBar>
-    <stackLayout class="hr m-10" />
+    <stackLayout class="hr" />
 
     <gridLayout rows="auto auto auto" columns="60 * 75">
       <label row="0" col="0" text="Giá" />
@@ -103,7 +103,7 @@
         visibility={$categoryIndex > 2 ? '' : 'collapsed'}
         textWrap="true" />
     </gridLayout>
-    <stackLayout class="hr m-10" />
+    <stackLayout class="hr" />
 
     <label class="h1 text-center text-primary" text={$final} />
     <button
@@ -117,7 +117,7 @@
       }}>
       Lưu
     </button>
-    <stackLayout class="hr m-10" />
+    <stackLayout class="hr" />
 
     <scrollView>
       <stackLayout>
