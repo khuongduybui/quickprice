@@ -1,29 +1,36 @@
 {
   "nativescript": {
-    "id": "technology.sveltenative.template",
+    "id": "info.phoenixpalace.quickprice",
     "tns-android": {
-      "version": "6.1.1"
+      "version": "6.3.2"
     },
     "tns-ios": {
-      "version": "6.1.1"
+      "version": "6.3.2"
     }
   },
   "main": "app.js",
-  "description": "NativeScript Application",
-  "license": "SEE LICENSE IN <your-license-filename>",
-  "repository": "<fill-your-repository-here>",
+  "description": "Quick Price Calculator",
+  "license": "UNLICENSED",
+  "repository": "https://github.com/khuongduybui/quickprice",
   "dependencies": {
-    "nativescript-theme-core": "^2.0.21",
-    "svelte-native": "^0.4.3",
-    "tns-core-modules": "6.1.1"
+    "nativescript-theme-core": "~2.0.24",
+    "svelte-native": "~0.7.2",
+    "tns-core-modules": "~6.3.2"
   },
   "devDependencies": {
-    "nativescript-dev-webpack": "1.2.0",
-    "svelte": "^3.12.1",
-    "svelte-loader": "github:rixo/svelte-loader#hmr",
-    "svelte-native-preprocessor": "^0.1.4",
-    "typescript": "3.6.3"
+    "nativescript-dev-webpack": "1.4.0",
+    "svelte": "~3.16.7",
+    "svelte-loader": "github:halfnelson/svelte-loader#native",
+    "svelte-loader-hot": "^0.1.1",
+    "svelte-native-preprocessor": "~0.1.4",
+    "typescript": "3.7.4"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "printWidth": 160,
+    "singleQuote": true,
+    "trailingComma": "all"
   },
   "gitHead": "c06800e52ee1a184ea2dffd12a6702aaa43be4e3",
-  "readme": "NativeScript Application"
+  "readme": "Made with ❤ from 🐨"
 }
