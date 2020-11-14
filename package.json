@@ -15,7 +15,7 @@
   "dependencies": {
     "nativescript-theme-core": "~2.0.24",
     "svelte-native": "~0.7.2",
-    "tns-core-modules": "~6.3.2"
+    "tns-core-modules": "~6.5.0"
   },
   "devDependencies": {
     "nativescript-dev-webpack": "1.5.1",
