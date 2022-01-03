@@ -11,7 +11,7 @@ refer to http://docs.nativescript.org/ui/theme.
 The imported CSS rules must precede all other types of rules.
 */
 @import '@nativescript/theme/css/core.css';
-@import '@nativescript/theme/css/default.css';
+@import '@nativescript/theme/css/forest.css';
 
 /* Font icon class */
 .fab {
@@ -29,3 +29,41 @@ The imported CSS rules must precede all other types of rules.
   font-weight: 400;
 }
 
+/* App-specific CSS */
+page,
+segmentedBar {
+  font-size: 20;
+}
+
+gridLayout label {
+  padding: 5;
+  margin-top: 14;
+  margin-bottom: 11;
+}
+
+gridLayout label.textField {
+  margin-left: 25;
+}
+
+gridLayout textField {
+  font-size: 20;
+  margin-left: 30;
+  margin-right: 30;
+}
+
+gridLayout slider {
+  margin-top: 24;
+}
+
+button {
+  padding: 12 0;
+  font-size: 20;
+}
+
+button.-outline {
+  padding: 5 0;
+}
+
+scrollView gridLayout label {
+  font-size: 16;
+}
