@@ -30,7 +30,9 @@ export const categoryIndex = writable(0);
 export const category = derived(categoryIndex, from(categories));
 export const categoryLabel = derived(categoryIndex, from(categoryLabels));
 
-export const price = writable('100');
+export const originalPrice = writable('100');
+export const discount = writable('0');
+export const price = derived([originalPrice, discount], ([originalPrice, discount]) => (Number(originalPrice) * (100 - Number(discount))) / 100);
 
 export const taxes = [1, 1.05, 1.06, 1.075, 1.1];
 export const taxLabels = ['0%', '5%', '6%', '7.5%', '10%'];

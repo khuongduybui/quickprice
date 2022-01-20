@@ -2,6 +2,8 @@
   import {
     categoryIndex,
     categoryLabels,
+    originalPrice,
+    discount,
     price,
     taxes,
     taxIndex,
@@ -31,25 +33,39 @@
       </segmentedBar>
       <stackLayout class="hr" />
       -->
-      <gridLayout rows="auto auto auto" columns="60 * 75">
+      <gridLayout rows="auto auto auto auto" columns="60 * 75">
         <label row="0" col="0" text="Giá" />
-        <textField row="0" col="1" bind:text={$price} keyboardType="number" />
+        <textField
+          row="0"
+          col="1"
+          bind:text={$originalPrice}
+          keyboardType="number"
+        />
         <label row="0" col="2" text="USD" />
 
-        <label row="1" col="0" text="Thuế" />
-        <slider
+        <label row="1" col="0" text="Bớt" />
+        <textField
           row="1"
+          col="1"
+          bind:text={$discount}
+          keyboardType="number"
+        />
+        <label row="1" col="2" text="%" />
+
+        <label row="2" col="0" text="Thuế" />
+        <slider
+          row="2"
           col="1"
           bind:value={$taxIndex}
           minValue="0"
           maxValue={taxes.length - 1}
         />
-        <label row="1" col="2" text={$taxLabel} textWrap="true" />
+        <label row="2" col="2" text={$taxLabel} textWrap="true" />
 
-        <label row="2" col="0" text="Cỡ" />
+        <label row="3" col="0" text="Cỡ" />
         <!-- Perfume -->
         <slider
-          row="2"
+          row="3"
           col="1"
           bind:value={$volumeIndex}
           minValue="0"
@@ -57,7 +73,7 @@
           visibility={$categoryIndex === 0 ? "visible" : "collapsed"}
         />
         <label
-          row="2"
+          row="3"
           col="2"
           text={$volumeLabel}
           visibility={$categoryIndex === 0 ? "visible" : "collapsed"}
@@ -65,7 +81,7 @@
         />
         <!-- Cosmetics -->
         <slider
-          row="2"
+          row="3"
           col="1"
           bind:value={$sizeIndex}
           minValue="0"
@@ -73,7 +89,7 @@
           maxValue={sizes.length - 1}
         />
         <label
-          row="2"
+          row="3"
           col="2"
           text={$sizeLabel}
           visibility={$categoryIndex === 1 ? "visible" : "collapsed"}
@@ -81,14 +97,14 @@
         />
         <!-- Lipsticks -->
         <label
-          row="2"
+          row="3"
           col="1"
           text="4"
           class="textField"
           visibility={$categoryIndex === 2 ? "visible" : "collapsed"}
         />
         <label
-          row="2"
+          row="3"
           col="2"
           text="oz"
           visibility={$categoryIndex === 2 ? "visible" : "collapsed"}
@@ -96,14 +112,14 @@
         />
         <!-- Others -->
         <textField
-          row="2"
+          row="3"
           col="1"
           bind:text={$weight}
           keyboardType="number"
           visibility={$categoryIndex > 2 ? "visible" : "collapsed"}
         />
         <label
-          row="2"
+          row="3"
           col="2"
           text="oz"
           visibility={$categoryIndex > 2 ? "visible" : "collapsed"}
