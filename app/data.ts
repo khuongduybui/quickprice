@@ -85,7 +85,7 @@ const custom = derived([category, priceWithTax, shippingWeight], ([category, pri
 
 export const finalUsd = derived([priceWithTax, shipping, custom], ([priceWithTax, shipping, custom]) => priceWithTax + shipping + custom);
 export const finalVnd = derived([finalUsd, usdToVnd], ([finalUsd, usdToVnd]) => finalUsd * Number(usdToVnd));
-export const profitVnd = derived(finalVnd, (finalVnd) => Math.max(200_000, Math.ceil(finalVnd * 0.1)));
+export const profitVnd = derived(finalVnd, (finalVnd) => Math.min(Math.max(200_000, Math.ceil(finalVnd * 0.1)), 250_000));
 export const finalWithProfitVnd = derived([finalVnd, profitVnd], ([finalVnd, profitVnd]) => Math.ceil((finalVnd + Number(profitVnd)) / 50_000) * 50_000);
 export const final = derived(finalWithProfitVnd, friendlyVnd);
 
