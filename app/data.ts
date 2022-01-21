@@ -1,7 +1,7 @@
 import { Unsubscriber, writable, derived } from 'svelte/store';
 import { ApplicationSettings } from '@nativescript/core';
 
-const usdToVnd = 23_500;
+export const usdToVnd = writable('23500');
 const shippingCost = 5; // $/lb
 export const lipstickWeight = 0.25; // lb
 const perfumeCustom = 6; // $/item
@@ -21,7 +21,7 @@ const friendlyVnd = (value: number) => {
     tokens.unshift(text.substr(i, 3));
   }
   tokens.unshift(text.substring(0, i + 3));
-  return `${tokens.join(',')} VND`;
+  return `${tokens.join('.')} ₫`;
 };
 
 export const categories = ['perfume', 'cosmetics', 'lipsticks', 'others'];
@@ -84,8 +84,10 @@ const custom = derived([category, priceWithTax, shippingWeight], ([category, pri
 });
 
 export const finalUsd = derived([priceWithTax, shipping, custom], ([priceWithTax, shipping, custom]) => priceWithTax + shipping + custom);
-export const finalVnd = derived(finalUsd, (finalUsd) => Math.ceil((finalUsd * usdToVnd) / 50_000) * 50_000);
-export const final = derived(finalVnd, friendlyVnd);
+export const finalVnd = derived([finalUsd, usdToVnd], ([finalUsd, usdToVnd]) => finalUsd * Number(usdToVnd));
+export const profitVnd = derived(finalVnd, (finalVnd) => Math.max(200_000, Math.ceil(finalVnd * 0.1)));
+export const finalWithProfitVnd = derived([finalVnd, profitVnd], ([finalVnd, profitVnd]) => Math.ceil((finalVnd + Number(profitVnd)) / 50_000) * 50_000);
+export const final = derived(finalWithProfitVnd, friendlyVnd);
 
 export const fullHistory = writable([], (set) => {
   if (ApplicationSettings.hasKey('fullHistory')) {

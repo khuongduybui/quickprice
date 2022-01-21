@@ -18,7 +18,11 @@
     final,
     fullHistory,
     lipstickWeight,
+    profitVnd,
+    usdToVnd,
   } from "../data";
+  import { Unsubscriber, writable, derived } from "svelte/store";
+  const adminMode = writable(false);
 </script>
 
 <page>
@@ -144,6 +148,25 @@
           $fullHistory = [entry].concat($fullHistory);
         }}>Lưu</button
       >
+      <button class="-outline" on:tap={() => ($adminMode = !$adminMode)}
+        >Cài đặt</button
+      >
+      {#if $adminMode}
+        <gridLayout rows="auto auto" columns="60 * 75">
+          <label row="0" col="0" text="$1 =" />
+          <textField
+            row="0"
+            col="1"
+            bind:text={$usdToVnd}
+            keyboardType="number"
+          />
+          <label row="0" col="2" text="₫" />
+
+          <label row="1" col="0" text="PR" />
+          <textField row="1" col="1" bind:text={$profitVnd} readonly />
+          <label row="1" col="2" text="₫" />
+        </gridLayout>
+      {/if}
       <stackLayout class="hr" />
     </stackLayout>
 
