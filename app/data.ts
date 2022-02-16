@@ -4,11 +4,11 @@ import { ApplicationSettings } from '@nativescript/core';
 export const usdToVnd = writable('23500');
 const shippingCost = 5; // $/lb
 export const lipstickWeight = 0.25; // lb
-const perfumeCustom = 6; // $/item
 const cosmeticsCustom = 2.5; // $/lb
-const lipstickCustom = (priceWithTax: number) => {
-  if (priceWithTax >= 30) return 1.5;
-  return 0.5;
+const lipstickCustom = (priceWithTax: number) => (priceWithTax >= 30 ? 1.5 : 0.5); // $/item
+const perfumeCustom = (priceWithTax: number) => {
+  const custom = priceWithTax >= 100 ? Math.ceil(priceWithTax * 0.07 * 100) / 100 : 5; // https://www.datvietcargo.com/dichvu
+  return custom + 1; // no longer discounts
 }; // $/item
 
 const from = (array: any[]) => (index: number) => array[index];
@@ -73,7 +73,7 @@ const shipping = derived(shippingWeight, (shippingWeight) => Math.ceil(shippingC
 const custom = derived([category, priceWithTax, shippingWeight], ([category, priceWithTax, shippingWeight]) => {
   switch (category) {
     case 'perfume':
-      return perfumeCustom;
+      return perfumeCustom(priceWithTax);
     case 'cosmetics':
       return cosmeticsCustom * shippingWeight;
     case 'lipsticks':
