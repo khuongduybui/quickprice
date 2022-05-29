@@ -1,0 +1,6 @@
+# Custom Dictionary Words
+cmdline
+direnv
+phoenixpalace
+quickprice
+tcpip
