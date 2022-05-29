@@ -1,6 +1,8 @@
 # Custom Dictionary Words
+Autoformatter
 cmdline
 direnv
+markdownlint
 phoenixpalace
 quickprice
 tcpip

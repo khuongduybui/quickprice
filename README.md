@@ -8,9 +8,10 @@ Get [Android Studio](https://developer.android.com/studio#downloads).
 Extract to `~/opt/android-studio`.
 Run Android Studio standard setup `~/opt/android-studio/bin/studio.sh`.
 Run SDK Manager inside Android Studio adding:
+
 - SDK 31
+- build tools 31
 - cmdline tools latest
-- reinstalling build tools 31
 
 **Install NativeScript.**
 
