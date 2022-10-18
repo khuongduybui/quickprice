@@ -4,10 +4,10 @@
 
 **Install Android Studio.**
 
-Get [Android Studio](https://developer.android.com/studio#downloads).
-Extract to `~/opt/android-studio`.
-Run Android Studio standard setup `~/opt/android-studio/bin/studio.sh`.
-Run SDK Manager inside Android Studio adding:
+Get [Android Studio](https://developer.android.com/studio#downloads). Extract to
+`~/opt/android-studio`. Run Android Studio standard setup
+`~/opt/android-studio/bin/studio.sh`. Run SDK Manager inside Android Studio
+adding:
 
 - SDK 31
 - build tools 31
@@ -18,6 +18,7 @@ Run SDK Manager inside Android Studio adding:
 ```sh
 asdf local nodejs 17
 npm install -g nativescript
+asdf reshim
 ```
 
 **Setup environment variables.**
@@ -41,8 +42,7 @@ cd <app_name>/
 
 ### Using WSA
 
-Turn on WSA developer mode.
-In PowerShell / WSL2 `adb connect <WSA_IP_ADDRESS>`.
+Turn on WSA developer mode. In PowerShell / WSL2 `adb connect <WSA_IP_ADDRESS>`.
 
 ### Using real device
 

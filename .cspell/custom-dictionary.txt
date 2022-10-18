@@ -2,7 +2,15 @@
 Autoformatter
 cmdline
 direnv
+hoa
+khác
 markdownlint
+mỹ
+nước
+phẩm
 phoenixpalace
 quickprice
+reshim
+son
 tcpip
+Unsubscriber
