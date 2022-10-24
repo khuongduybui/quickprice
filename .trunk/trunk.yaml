@@ -13,7 +13,7 @@ plugins:
       ref: v0.0.5
       uri: https://github.com/trunk-io/plugins
 cli:
-  version: 0.18.1-beta
+  version: 1.0.1
 lint:
   enabled:
     - cspell@6.12.0
