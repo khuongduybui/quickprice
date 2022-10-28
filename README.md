@@ -40,9 +40,15 @@ cd <app_name>/
 
 ## Running
 
-### Using WSA
+### Using WSA with WSL2
 
-Turn on WSA developer mode. In PowerShell / WSL2 `adb connect <WSA_IP_ADDRESS>`.
+Turn on WSA developer mode. Take note of the port (`58526`?)
+
+```sh
+ipconfig.exe  # take note of vEthernet WSL IP address, such as 172.26.160.1
+adb connect 172.26.160.1:58526
+ns run android
+```
 
 ### Using real device
 
