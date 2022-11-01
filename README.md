@@ -23,12 +23,9 @@ asdf reshim
 
 **Setup environment variables.**
 
-`direnv edit .`
-
 ```sh
-#! /bin/sh
-
-export JAVA_HOME=$HOME/opt/android-studio/jre
+npx direnv-vault login
+npx direnv-vault pull
 ```
 
 **Create new app.**
