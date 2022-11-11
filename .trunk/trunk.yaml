@@ -5,18 +5,21 @@ runtimes:
     - node@16.14.2
 actions:
   enabled:
+    - trunk-announce
+    - trunk-check-pre-push
+    - trunk-fmt-pre-commit
     - trunk-cache-prune
     - trunk-upgrade-available
 plugins:
   sources:
     - id: trunk
-      ref: v0.0.5
+      ref: v0.0.6
       uri: https://github.com/trunk-io/plugins
 cli:
-  version: 1.0.1
+  version: 1.1.0
 lint:
   enabled:
-    - cspell@6.13.1
+    - cspell@6.14.2
     - git-diff-check@SYSTEM
     - gitleaks@8.15.0
     - markdownlint@0.32.2
