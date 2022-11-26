@@ -12,6 +12,8 @@
     "@nativescript/android": "8.3.1",
     "@nativescript/types": "8.3.1",
     "@nativescript/webpack": "5.0.11",
+    "dotenv-vault": "^1.16.3",
+    "nativescript": "^8.3.3",
     "svelte": "3.53.1",
     "svelte-loader": "3.1.4",
     "svelte-native-preprocessor": "1.0.0",

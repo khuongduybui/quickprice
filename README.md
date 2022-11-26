@@ -16,9 +16,9 @@ adding:
 **Install NativeScript.**
 
 ```sh
-asdf local nodejs 17
-npm install -g nativescript dotenv-vault
-asdf reshim
+asdf install nodejs 18.12.1
+npm install --save-dev --legacy-peer-deps nativescript dotenv-vault
+npx ns doctor
 ```
 
 **Setup environment variables.**
@@ -31,7 +31,7 @@ npx dotenv-vault pull
 **Create new app.**
 
 ```sh
-ns create <app_name> [--js|--svelte] --appid info.phoenixpalace.<app_name>
+npx ns create <app_name> [--js|--svelte] --appid info.phoenixpalace.<app_name>
 cd <app_name>/
 ```
 
@@ -44,7 +44,7 @@ Turn on WSA developer mode. Take note of the port (`58526`?)
 ```sh
 ipconfig.exe  # take note of vEthernet WSL IP address, such as 172.26.160.1
 adb connect 172.26.160.1:58526
-ns run android
+npx ns run android
 ```
 
 ### Using real device
@@ -60,5 +60,5 @@ adb tcpip 5555
 
 ```sh
 adb connect <phone_ip>:5555
-ns run android
+npx ns run android
 ```
