@@ -17,15 +17,15 @@ adding:
 
 ```sh
 asdf local nodejs 17
-npm install -g nativescript
+npm install -g nativescript dotenv-vault
 asdf reshim
 ```
 
 **Setup environment variables.**
 
 ```sh
-npx direnv-vault login
-npx direnv-vault pull
+npx dotenv-vault login
+npx dotenv-vault pull
 ```
 
 **Create new app.**
