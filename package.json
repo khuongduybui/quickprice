@@ -14,7 +14,7 @@
     "@nativescript/webpack": "5.0.12",
     "dotenv-vault": "^1.16.3",
     "nativescript": "^8.3.3",
-    "svelte": "3.54.0",
+    "svelte": "3.55.0",
     "svelte-loader": "3.1.4",
     "svelte-native-preprocessor": "1.0.0",
     "svelte-preprocess": "5.0.0",
