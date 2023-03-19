@@ -13,15 +13,16 @@ actions:
 plugins:
   sources:
     - id: trunk
-      ref: v0.0.11
+      ref: v0.0.13
       uri: https://github.com/trunk-io/plugins
 cli:
-  version: 1.5.0
+  version: 1.6.1
 lint:
   enabled:
+    - oxipng@8.0.0
     - actionlint@1.6.23
-    - cspell@6.26.3
+    - cspell@6.30.0
     - git-diff-check@SYSTEM
-    - gitleaks@8.15.3
+    - gitleaks@8.16.1
     - markdownlint@0.33.0
     - prettier@2.8.4
