@@ -11,7 +11,7 @@
   "devDependencies": {
     "@nativescript/android": "8.7.0",
     "@nativescript/types": "8.7.0",
-    "@nativescript/webpack": "5.0.19",
+    "@nativescript/webpack": "5.0.20",
     "dotenv-vault": "^1.16.3",
     "nativescript": "^8.3.3",
     "svelte": "4.2.14",
