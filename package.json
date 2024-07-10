@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@nativescript/android": "8.8.0",
-    "@nativescript/types": "8.7.0",
+    "@nativescript/types": "8.8.0",
     "@nativescript/webpack": "5.0.21",
     "dotenv-vault": "^1.16.3",
     "nativescript": "^8.3.3",
